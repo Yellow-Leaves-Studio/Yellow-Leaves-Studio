@@ -72,6 +72,21 @@ await og('public/og/leave-smart.png', 'Leave Smart', 'Smart location-based remin
 await og('public/og/about.png', 'About the studio', 'A tiny studio with a cozy name.');
 await og('public/og/press.png', 'Press kit', 'Logos, facts, and panda stickers.');
 
+// --- LinkedIn cover banner (1128×191) ---
+// Logo overlaps the bottom-left in LinkedIn's UI, so text starts past it.
+const cover = el('div', { width: 1128, height: 191, display: 'flex', alignItems: 'center', backgroundColor: CREAM, paddingLeft: 210, paddingRight: 70 }, [
+  el('div', { display: 'flex', flexDirection: 'column', flex: 1 }, [
+    el('div', { fontFamily: 'Baloo 2', fontSize: 46, color: INK, lineHeight: 1 }, 'Yellow Leaves Studio'),
+    el('div', { display: 'flex', alignItems: 'center', marginTop: 12 }, [
+      el('div', { width: 64, height: 9, backgroundColor: YELLOW, borderRadius: 5, marginRight: 14 }, undefined),
+      el('div', { fontFamily: 'Nunito', fontSize: 23, color: INK_SOFT }, 'cozy games & apps, made with care.'),
+    ]),
+  ]),
+  el('img', { width: 198, height: 152 }, undefined, { src: mascotUri, width: 198, height: 152 }),
+]);
+const coverSvg = await satori(cover, { width: 1128, height: 191, fonts });
+await writeFile('public/press/linkedin-cover.png', await sharp(Buffer.from(coverSvg)).png().toBuffer());
+
 // --- Press kit ---
 await cp('src/brand/mascot-panda.svg', `${kit}/mascot.svg`);
 await cp('src/brand/mascot-panda-face.svg', `${kit}/mark.svg`);
