@@ -14,9 +14,10 @@ interface Props {
   ogImage?: string;
   jsonLd?: object[];
   activeNav?: string;
+  noindex?: boolean;
 }
 
-const { title, description, ogImage, jsonLd, activeNav } = Astro.props;
+const { title, description, ogImage, jsonLd, activeNav, noindex } = Astro.props;
 ---
 
 <!doctype html>
@@ -29,7 +30,7 @@ const { title, description, ogImage, jsonLd, activeNav } = Astro.props;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#fff8e2" />
-    <SEO {title} {description} {ogImage} {jsonLd} />
+    <SEO {title} {description} {ogImage} {jsonLd} {noindex} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
