@@ -8,7 +8,7 @@ export const studio = {
   tagline: 'We make small things that last.',
   description:
     'Yellow Leaves Studio is a small independent studio making games and apps with care. Maker of Leave Smart, the location-based reminders app for iPhone, with an unannounced game in the works.',
-  foundingYear: '2019',
+  foundingYear: '2020',
   founder: 'Lakshmana Swamy Paduchuri & Lakshmi Paduchuri',
   email: 'yellowleavesstudio@gmail.com',
   socials: [
