@@ -1,0 +1,113 @@
+---
+import Mascot from './Mascot.astro';
+import { studio } from '../data/studio';
+
+interface Props {
+  activeNav?: string;
+}
+const { activeNav } = Astro.props;
+
+const links = [
+  { key: 'games', label: 'games', href: '/#the-game' },
+  { key: 'apps', label: 'apps', href: '/leave-smart/' },
+  { key: 'about', label: 'about', href: '/about/' },
+];
+---
+
+<header class="site-header">
+  <nav class="wrap site-nav" aria-label="Main">
+    <a class="lockup" href="/">
+      <Mascot variant="face" width={30} title="Yellow Leaves Studio panda logo" />
+      <span>Yellow Leaves Studio</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} aria-current={activeNav === l.key ? 'page' : undefined}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="btn btn--yellow say-hi" href={`mailto:${studio.email}`}>say hi</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background: var(--cream);
+    border-bottom: 2px dashed var(--dashed);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.85rem;
+    gap: 1rem;
+  }
+
+  .lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.9rem, 3vw, 1.6rem);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: clamp(0.9rem, 3vw, 1.4rem);
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a[aria-current='page'] {
+    color: var(--ink);
+    border-bottom-color: var(--yellow);
+  }
+
+  .say-hi {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 560px) {
+    .lockup span {
+      display: none;
+    }
+    .nav-links {
+      gap: 0.9rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

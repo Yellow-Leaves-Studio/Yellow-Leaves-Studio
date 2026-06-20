@@ -1,0 +1,137 @@
+---
+/**
+ * Yellow Leaves Studio mascot — a cute panda peeking over a yellow
+ * NES-style controller, die-cut sticker style.
+ *
+ * variant="full"  → the whole sticker (hero/section art)
+ * variant="face"  → just the head (nav lockup, small spots)
+ *
+ * With `wobble`, the head + facial features gently sway while the paws
+ * keep gripping the controller. The face is split into two groups (one
+ * behind the controller, one in front) so the smile never gets masked
+ * by the controller's pastel edge. Reduced-motion disables the sway via
+ * the global kill-switch.
+ */
+interface Props {
+  variant?: 'full' | 'face';
+  width?: number;
+  wobble?: boolean;
+  sleepy?: boolean;
+  class?: string;
+  title?: string;
+}
+
+const {
+  variant = 'full',
+  width = 200,
+  wobble = false,
+  sleepy = false,
+  class: className,
+  title = 'The Yellow Leaves Studio panda, peeking over a game controller',
+} = Astro.props;
+
+const viewBox = variant === 'face' ? '82 42 156 110' : '40 30 240 184';
+---
+
+<svg
+  class:list={['mascot', className, { 'mascot--wobble': wobble && variant === 'full' }]}
+  viewBox={viewBox}
+  width={width}
+  role="img"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title>{title}</title>
+  <g class="mascot__head">
+    <g class="mascot__edge">
+      <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)"></ellipse>
+      <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)"></ellipse>
+      <circle cx="160" cy="116" r="64"></circle>
+    </g>
+    <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"></ellipse>
+    <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"></ellipse>
+    <circle cx="160" cy="116" r="64" fill="#fff" stroke="#2f2a24" stroke-width="3.5"></circle>
+    <ellipse cx="134" cy="116" rx="20" ry="27" transform="rotate(20 134 116)" fill="#3c3833"></ellipse>
+    <ellipse cx="186" cy="116" rx="20" ry="27" transform="rotate(-20 186 116)" fill="#3c3833"></ellipse>
+    {
+      sleepy ? (
+        <>
+          <path d="M129 122 q8 -8 16 0" fill="none" stroke="#241f1a" stroke-width="4" stroke-linecap="round" />
+          <path d="M175 122 q8 -8 16 0" fill="none" stroke="#241f1a" stroke-width="4" stroke-linecap="round" />
+        </>
+      ) : (
+        <>
+          <circle cx="137" cy="123" r="14" fill="#241f1a" />
+          <circle cx="183" cy="123" r="14" fill="#241f1a" />
+          <circle cx="142" cy="117" r="5.5" fill="#fff" />
+          <circle cx="188" cy="117" r="5.5" fill="#fff" />
+          <circle cx="133" cy="128" r="2.6" fill="#fff" />
+          <circle cx="179" cy="128" r="2.6" fill="#fff" />
+        </>
+      )
+    }
+  </g>
+
+  {
+    variant === 'full' && (
+      <g class="mascot__controller">
+        <g class="mascot__edge">
+          <rect x="64" y="150" width="192" height="54" rx="12" />
+          <ellipse cx="100" cy="150" rx="15" ry="11" />
+          <ellipse cx="220" cy="150" rx="15" ry="11" />
+        </g>
+        <rect x="64" y="150" width="192" height="54" rx="12" fill="#ffc83d" stroke="#2f2a24" stroke-width="3.5" />
+        <path d="M74,159 H246 M74,164 H246" stroke="#e0a92a" stroke-width="2" stroke-linecap="round" />
+        <rect x="96" y="167" width="11" height="24" rx="2.5" fill="#2a2620" />
+        <rect x="89" y="173" width="25" height="11" rx="2.5" fill="#2a2620" />
+        <rect x="139" y="172" width="42" height="14" rx="5" fill="#2a2620" />
+        <rect x="144" y="176" width="13" height="6" rx="3" fill="#c24a44" />
+        <rect x="163" y="176" width="13" height="6" rx="3" fill="#c24a44" />
+        <rect x="190" y="166" width="56" height="26" rx="13" fill="#2a2620" />
+        <circle cx="206" cy="179" r="8.5" fill="#d83f38" stroke="#7a1f1f" stroke-width="2" />
+        <circle cx="230" cy="179" r="8.5" fill="#d83f38" stroke="#7a1f1f" stroke-width="2" />
+        <ellipse cx="100" cy="150" rx="15" ry="11" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5" />
+        <ellipse cx="220" cy="150" rx="15" ry="11" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5" />
+        <g stroke="#6b6359" stroke-width="2" stroke-linecap="round">
+          <path d="M94,148 v7" /><path d="M100,148 v8" /><path d="M106,148 v7" />
+          <path d="M214,148 v7" /><path d="M220,148 v8" /><path d="M226,148 v7" />
+        </g>
+      </g>
+    )
+  }
+
+  <g class="mascot__head">
+    <circle cx="116" cy="133" r="9" fill="#f4a98f" opacity="0.55"></circle>
+    <circle cx="204" cy="133" r="9" fill="#f4a98f" opacity="0.55"></circle>
+    <ellipse cx="160" cy="131" rx="7" ry="5" fill="#2f2a24"></ellipse>
+    <path d="M160,136 q-7,7 -13,2 M160,136 q7,7 13,2" fill="none" stroke="#2f2a24" stroke-width="3" stroke-linecap="round"></path>
+  </g>
+</svg>
+
+<style>
+  .mascot__edge {
+    fill: var(--leaf-pastel, #f7e09a);
+    stroke: var(--leaf-pastel, #f7e09a);
+    stroke-width: 20;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  .mascot__head {
+    transform-box: view-box;
+    transform-origin: 160px 176px;
+  }
+
+  .mascot--wobble .mascot__head {
+    animation: mascot-wobble 3s ease-in-out infinite;
+  }
+
+  @keyframes mascot-wobble {
+    0%,
+    100% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+  }
+</style>

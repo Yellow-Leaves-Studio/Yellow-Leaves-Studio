@@ -1,0 +1,120 @@
+---
+/**
+ * Stylized CSS rendition of the Leave Smart app, in the cozy palette.
+ * Decorative — stands in until real App Store screenshots are dropped in.
+ * Yellow dot = arrive trigger, coral dot = leave trigger.
+ */
+const reminders = [
+  { kind: 'arrive', title: 'Buy milk', where: 'when I arrive · FreshMart' },
+  { kind: 'leave', title: 'Take the keys', where: 'when I leave · Home' },
+  { kind: 'arrive', title: 'Return the book', where: 'when I arrive · Library' },
+];
+---
+
+<div class="phone" aria-hidden="true">
+  <div class="phone-screen">
+    <div class="phone-status"><span>9:41</span><span>•••</span></div>
+    <p class="phone-title">Leave Smart</p>
+    {
+      reminders.map((r) => (
+        <div class="phone-card">
+          <span class:list={['phone-dot', `phone-dot--${r.kind}`]} />
+          <span class="phone-text">
+            <strong>{r.title}</strong>
+            {r.where}
+          </span>
+        </div>
+      ))
+    }
+    <div class="phone-add">+</div>
+  </div>
+</div>
+
+<style>
+  .phone {
+    width: min(210px, 64vw);
+    background: var(--ink);
+    border-radius: 34px;
+    padding: 9px;
+    box-shadow: 0 16px 30px -12px rgba(120, 90, 20, 0.3);
+    margin-inline: auto;
+  }
+
+  .phone-screen {
+    background: var(--cream-soft);
+    border-radius: 26px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .phone-status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .phone-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin: 2px 0 4px;
+  }
+
+  .phone-card {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    border: 1.5px solid var(--card-border);
+    border-radius: 13px;
+    padding: 9px;
+  }
+
+  .phone-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .phone-dot--arrive {
+    background: var(--yellow);
+  }
+
+  .phone-dot--leave {
+    background: var(--coral);
+  }
+
+  .phone-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.68rem;
+    line-height: 1.3;
+    color: var(--ink-soft);
+  }
+
+  .phone-text strong {
+    color: var(--ink);
+    font-size: 0.78rem;
+  }
+
+  .phone-add {
+    align-self: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--yellow-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 3px 0 var(--yellow-deep);
+    margin-top: 4px;
+  }
+</style>

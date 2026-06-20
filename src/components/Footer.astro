@@ -1,0 +1,54 @@
+---
+import { studio } from '../data/studio';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© {year} Yellow Leaves Studio</span>
+    <span class="footer-links">
+      {studio.socials.map((s) => <a href={s.href} rel="me noopener">{s.label}</a>)}
+      <span aria-hidden="true">·</span>
+      <a href={`mailto:${studio.email}`}>{studio.email}</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: auto;
+    border-top: 2px dashed var(--dashed);
+    background: var(--cream);
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-block: 1.1rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-small);
+    color: #9a8b54;
+  }
+
+  .footer-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    color: #9a8b54;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+</style>

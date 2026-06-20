@@ -1,0 +1,20 @@
+# Yellow Leaves Studio
+
+> Yellow Leaves Studio is a small independent studio founded in 2025 by Kowsik Paduchuri, making games and apps that are small on purpose, private by default, and shipped finished. Website: https://yellowleavesstudio.com
+
+## Products
+
+- [Leave Smart](https://yellowleavesstudio.com/leave-smart/): Smart location-based reminders for iPhone. Create a reminder once, pick a place, and get notified the moment you arrive or leave — even when the app is closed. Battery friendly via motion awareness. Collects no data; locations stay on device. Free on the App Store (iOS 15.1+): https://apps.apple.com/us/app/leave-smart/id6751127452
+- Unannounced game: the studio's first game is in development. No name, platform, or details are public yet.
+
+## Pages
+
+- [Home](https://yellowleavesstudio.com/): Studio overview, Leave Smart showcase, and a teaser for the unannounced game.
+- [Leave Smart](https://yellowleavesstudio.com/leave-smart/): Full product page with features and App Store link.
+- [About](https://yellowleavesstudio.com/about/): The studio story and values (small on purpose, private by default, finished things).
+- [Press](https://yellowleavesstudio.com/press/): Fact sheet, boilerplate, and downloadable logo/mascot press kit.
+
+## Contact
+
+- Email: yellowleavesstudio@gmail.com
+- LinkedIn: https://www.linkedin.com/company/yellow-leaves-studio

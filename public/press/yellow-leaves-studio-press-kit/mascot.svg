@@ -1,0 +1,41 @@
+<svg viewBox="40 30 240 184" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yellow Leaves Studio mascot: a cute panda peeking over a yellow NES-style game controller">
+  <g fill="#f7e09a" stroke="#f7e09a" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)"/>
+    <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)"/>
+    <circle cx="160" cy="116" r="64"/>
+    <rect x="64" y="150" width="192" height="54" rx="12"/>
+    <ellipse cx="100" cy="150" rx="15" ry="11"/>
+    <ellipse cx="220" cy="150" rx="15" ry="11"/>
+  </g>
+  <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <circle cx="160" cy="116" r="64" fill="#fff" stroke="#2f2a24" stroke-width="3.5"/>
+  <ellipse cx="134" cy="116" rx="20" ry="27" transform="rotate(20 134 116)" fill="#3c3833"/>
+  <ellipse cx="186" cy="116" rx="20" ry="27" transform="rotate(-20 186 116)" fill="#3c3833"/>
+  <circle cx="137" cy="123" r="14" fill="#241f1a"/>
+  <circle cx="183" cy="123" r="14" fill="#241f1a"/>
+  <circle cx="142" cy="117" r="5.5" fill="#fff"/>
+  <circle cx="188" cy="117" r="5.5" fill="#fff"/>
+  <circle cx="133" cy="128" r="2.6" fill="#fff"/>
+  <circle cx="179" cy="128" r="2.6" fill="#fff"/>
+  <rect x="64" y="150" width="192" height="54" rx="12" fill="#ffc83d" stroke="#2f2a24" stroke-width="3.5"/>
+  <path d="M74,159 H246 M74,164 H246" stroke="#e0a92a" stroke-width="2" stroke-linecap="round"/>
+  <rect x="96" y="167" width="11" height="24" rx="2.5" fill="#2a2620"/>
+  <rect x="89" y="173" width="25" height="11" rx="2.5" fill="#2a2620"/>
+  <rect x="139" y="172" width="42" height="14" rx="5" fill="#2a2620"/>
+  <rect x="144" y="176" width="13" height="6" rx="3" fill="#c24a44"/>
+  <rect x="163" y="176" width="13" height="6" rx="3" fill="#c24a44"/>
+  <rect x="190" y="166" width="56" height="26" rx="13" fill="#2a2620"/>
+  <circle cx="206" cy="179" r="8.5" fill="#d83f38" stroke="#7a1f1f" stroke-width="2"/>
+  <circle cx="230" cy="179" r="8.5" fill="#d83f38" stroke="#7a1f1f" stroke-width="2"/>
+  <ellipse cx="100" cy="150" rx="15" ry="11" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <ellipse cx="220" cy="150" rx="15" ry="11" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <g stroke="#6b6359" stroke-width="2" stroke-linecap="round">
+    <path d="M94,148 v7"/><path d="M100,148 v8"/><path d="M106,148 v7"/>
+    <path d="M214,148 v7"/><path d="M220,148 v8"/><path d="M226,148 v7"/>
+  </g>
+  <circle cx="116" cy="133" r="9" fill="#f4a98f" opacity="0.55"/>
+  <circle cx="204" cy="133" r="9" fill="#f4a98f" opacity="0.55"/>
+  <ellipse cx="160" cy="131" rx="7" ry="5" fill="#2f2a24"/>
+  <path d="M160,136 q-7,7 -13,2 M160,136 q7,7 13,2" fill="none" stroke="#2f2a24" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,110 @@
+---
+/**
+ * Small cozy icon set, drawn to match the sticker style (yellow fills,
+ * charcoal outlines). Decorative by default — pass a `title` only when an
+ * icon carries meaning on its own.
+ */
+interface Props {
+  name:
+    | 'pin'
+    | 'controller'
+    | 'heart'
+    | 'leaf'
+    | 'lock'
+    | 'moon'
+    | 'battery'
+    | 'clock'
+    | 'download'
+    | 'star';
+  size?: number;
+  class?: string;
+  title?: string;
+}
+const { name, size = 22, class: className, title } = Astro.props;
+const Y = '#ffc83d';
+const D = '#2f2a24';
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  role={title ? 'img' : 'presentation'}
+  aria-hidden={title ? undefined : 'true'}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {title && <title>{title}</title>}
+  {
+    name === 'pin' && (
+      <>
+        <path d="M12 2C7.6 2 4 5.4 4 9.8 4 15.5 12 22 12 22s8-6.5 8-12.2C20 5.4 16.4 2 12 2Z" fill={Y} stroke={D} stroke-width="1.8" stroke-linejoin="round" />
+        <circle cx="12" cy="9.6" r="3" fill={D} />
+      </>
+    )
+  }
+  {
+    name === 'controller' && (
+      <>
+        <rect x="2" y="7" width="20" height="11" rx="4.5" fill={Y} stroke={D} stroke-width="1.8" />
+        <rect x="6" y="10.4" width="2.6" height="6" rx="1" fill="#2a2620" />
+        <rect x="4.3" y="12.1" width="6" height="2.6" rx="1" fill="#2a2620" />
+        <circle cx="16.6" cy="11.4" r="1.5" fill="#2a2620" />
+        <circle cx="19" cy="13.8" r="1.5" fill="#2a2620" />
+      </>
+    )
+  }
+  {
+    name === 'heart' && (
+      <path d="M12 21C4 15 2 9.5 5.5 6.6 8.2 4.4 11 6.5 12 8.2 13 6.5 15.8 4.4 18.5 6.6 22 9.5 20 15 12 21Z" fill="#f4a98f" stroke={D} stroke-width="1.8" stroke-linejoin="round" />
+    )
+  }
+  {
+    name === 'leaf' && (
+      <>
+        <path d="M5 19C5 9 9 5 19 5 19 15 15 19 5 19Z" fill={Y} stroke={D} stroke-width="1.8" stroke-linejoin="round" />
+        <path d="M8.5 15.5 15.5 8.5" stroke={D} stroke-width="1.6" stroke-linecap="round" />
+      </>
+    )
+  }
+  {
+    name === 'lock' && (
+      <>
+        <rect x="5" y="10" width="14" height="10" rx="2.5" fill={Y} stroke={D} stroke-width="1.8" />
+        <path d="M8 10V8a4 4 0 0 1 8 0v2" fill="none" stroke={D} stroke-width="1.8" stroke-linecap="round" />
+        <circle cx="12" cy="14.6" r="1.6" fill="#2a2620" />
+      </>
+    )
+  }
+  {
+    name === 'moon' && (
+      <path d="M20 14A8 8 0 1 1 10 4 6.2 6.2 0 0 0 20 14Z" fill={Y} stroke={D} stroke-width="1.8" stroke-linejoin="round" />
+    )
+  }
+  {
+    name === 'battery' && (
+      <>
+        <rect x="3" y="8" width="16" height="9" rx="2.5" fill={Y} stroke={D} stroke-width="1.8" />
+        <rect x="20" y="11" width="2.6" height="3" rx="1" fill={D} />
+        <path d="M12.5 9.5 9.5 13H12l-1 3" fill="none" stroke={D} stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+      </>
+    )
+  }
+  {
+    name === 'clock' && (
+      <>
+        <circle cx="12" cy="12" r="8.5" fill={Y} stroke={D} stroke-width="1.8" />
+        <path d="M12 7v5l3.4 2" fill="none" stroke={D} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      </>
+    )
+  }
+  {
+    name === 'download' && (
+      <>
+        <path d="M12 3v11M7.5 10 12 14.5 16.5 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </>
+    )
+  }
+  {name === 'star' && <path d="M12 3.5 14 9h5.5l-4.4 3.4 1.7 5.4L12 14.8 7.2 17.8l1.7-5.4L4.5 9H10Z" fill={Y} stroke={D} stroke-width="1.6" stroke-linejoin="round" />}
+</svg>

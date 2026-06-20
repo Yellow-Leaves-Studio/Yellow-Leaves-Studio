@@ -1,0 +1,236 @@
+---
+import Base from '../layouts/Base.astro';
+import Mascot from '../components/Mascot.astro';
+import Icon from '../components/Icon.astro';
+import PhoneMockup from '../components/PhoneMockup.astro';
+import { studio, leaveSmart } from '../data/studio';
+import { leaveSmartLd, breadcrumbLd } from '../data/jsonld';
+
+const icons = ['pin', 'battery', 'lock', 'clock'] as const;
+const tilts = ['-3deg', '2deg', '2.6deg', '-1.6deg'];
+const crumbs = breadcrumbLd([
+  { name: 'Home', path: '/' },
+  { name: 'Leave Smart', path: '/leave-smart/' },
+]);
+---
+
+<Base
+  title="Leave Smart — smart location-based reminders for iPhone"
+  description={`${leaveSmart.description} Free on the App Store.`}
+  ogImage="/og/leave-smart.png"
+  jsonLd={[leaveSmartLd, crumbs]}
+  activeNav="apps"
+>
+  <section class="ls-hero">
+    <div class="wrap ls-hero-grid">
+      <div>
+        <span class="pill">✦ from Yellow Leaves Studio</span>
+        <h1>Leave Smart</h1>
+        <p class="ls-tagline">{leaveSmart.oneLiner.toLowerCase()}</p>
+        <p class="ls-desc">{leaveSmart.description}</p>
+        <div class="ls-actions">
+          <a class="btn btn--yellow" href={leaveSmart.appStoreUrl} rel="noopener">
+            <Icon name="download" size={18} /> Download on the App Store
+          </a>
+          <span class="ls-meta">free · {leaveSmart.requires} · {leaveSmart.category}</span>
+        </div>
+      </div>
+      <div class="ls-phone"><PhoneMockup /></div>
+    </div>
+  </section>
+
+  <section class="wrap ls-features" aria-labelledby="features-title">
+    <h2 id="features-title">reminders that know where they belong</h2>
+    <ul class="ls-feature-grid">
+      {
+        leaveSmart.features.map((f, i) => (
+          <li class="sticker ls-feature" style={`--tilt:${tilts[i]}`}>
+            <span class="ls-feature-icon"><Icon name={icons[i]} /></span>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap ls-privacy" aria-labelledby="privacy-title">
+    <span class="ls-privacy-icon"><Icon name="lock" size={26} /></span>
+    <div>
+      <h2 id="privacy-title">private by design</h2>
+      <p>
+        Leave Smart collects no data. your reminders and places live on your phone and nowhere
+        else — no accounts, no tracking. that’s not a paid tier, it’s just how we build things.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap ls-cta">
+    <Mascot variant="full" width={150} />
+    <div class="ls-cta-copy">
+      <h2>the right reminder, at the right place.</h2>
+      <a class="btn btn--yellow" href={leaveSmart.appStoreUrl} rel="noopener">
+        <Icon name="download" size={18} /> Download on the App Store — free
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ls-hero {
+    background: radial-gradient(circle at 78% 40%, #ffe89e, var(--cream) 72%);
+  }
+
+  .ls-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 2rem;
+    padding-block: clamp(2.5rem, 6vh, 4.5rem);
+  }
+
+  .ls-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.8rem 0 0.3rem;
+  }
+
+  .ls-tagline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--gold-accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .ls-desc {
+    color: var(--ink-soft);
+    max-width: 40ch;
+  }
+
+  .ls-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.6rem;
+  }
+
+  .ls-meta {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .ls-phone {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ls-features {
+    padding-block: var(--space-section);
+  }
+
+  .ls-features > h2 {
+    font-size: var(--text-title);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .ls-feature-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  .ls-feature {
+    padding: 1.4rem;
+    transform: rotate(var(--tilt));
+    transition: transform 0.18s ease;
+  }
+
+  .ls-feature:hover {
+    transform: rotate(0) translateY(-4px);
+  }
+
+  .ls-feature-icon {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: #ffe89e;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .ls-feature h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .ls-feature p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-top: 0.2rem;
+  }
+
+  .ls-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--strip);
+    border: 2px solid var(--strip-border);
+    border-left: 8px solid var(--yellow);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+  }
+
+  .ls-privacy h2 {
+    font-size: 1.3rem;
+  }
+
+  .ls-privacy p {
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+    max-width: 62ch;
+  }
+
+  .ls-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    padding-block: var(--space-section);
+  }
+
+  .ls-cta-copy {
+    max-width: 22rem;
+  }
+
+  .ls-cta-copy h2 {
+    font-size: var(--text-title);
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 820px) {
+    .ls-hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .ls-desc,
+    .ls-tagline {
+      margin-inline: auto;
+    }
+    .ls-actions {
+      justify-content: center;
+    }
+    .ls-phone {
+      order: -1;
+    }
+    .ls-feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yellowleavesstudio.com/sitemap-index.xml

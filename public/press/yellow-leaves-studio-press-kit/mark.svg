@@ -1,0 +1,22 @@
+<svg viewBox="82 40 156 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yellow Leaves Studio panda face">
+  <g fill="#f7e09a" stroke="#f7e09a" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)"/>
+    <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)"/>
+    <circle cx="160" cy="116" r="64"/>
+  </g>
+  <ellipse cx="112" cy="74" rx="25" ry="27" transform="rotate(-12 112 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <ellipse cx="208" cy="74" rx="25" ry="27" transform="rotate(12 208 74)" fill="#3c3833" stroke="#2f2a24" stroke-width="3.5"/>
+  <circle cx="160" cy="116" r="64" fill="#fff" stroke="#2f2a24" stroke-width="3.5"/>
+  <ellipse cx="134" cy="116" rx="20" ry="27" transform="rotate(20 134 116)" fill="#3c3833"/>
+  <ellipse cx="186" cy="116" rx="20" ry="27" transform="rotate(-20 186 116)" fill="#3c3833"/>
+  <circle cx="137" cy="123" r="14" fill="#241f1a"/>
+  <circle cx="183" cy="123" r="14" fill="#241f1a"/>
+  <circle cx="142" cy="117" r="5.5" fill="#fff"/>
+  <circle cx="188" cy="117" r="5.5" fill="#fff"/>
+  <circle cx="133" cy="128" r="2.6" fill="#fff"/>
+  <circle cx="179" cy="128" r="2.6" fill="#fff"/>
+  <circle cx="114" cy="135" r="9" fill="#f4a98f" opacity="0.55"/>
+  <circle cx="206" cy="135" r="9" fill="#f4a98f" opacity="0.55"/>
+  <ellipse cx="160" cy="135" rx="7" ry="5" fill="#2f2a24"/>
+  <path d="M160,140 q-7,7 -13,2 M160,140 q7,7 13,2" fill="none" stroke="#2f2a24" stroke-width="3" stroke-linecap="round"/>
+</svg>
