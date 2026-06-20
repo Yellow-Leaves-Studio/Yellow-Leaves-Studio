@@ -14,8 +14,7 @@ interface Props {
     | 'moon'
     | 'battery'
     | 'clock'
-    | 'download'
-    | 'star';
+    | 'download';
   size?: number;
   class?: string;
   title?: string;
@@ -106,5 +105,4 @@ const D = '#2f2a24';
       </>
     )
   }
-  {name === 'star' && <path d="M12 3.5 14 9h5.5l-4.4 3.4 1.7 5.4L12 14.8 7.2 17.8l1.7-5.4L4.5 9H10Z" fill={Y} stroke={D} stroke-width="1.6" stroke-linejoin="round" />}
 </svg>

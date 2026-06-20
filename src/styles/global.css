@@ -171,15 +171,6 @@ svg {
   box-shadow: 0 2px 0 var(--yellow-deep);
 }
 
-.btn--ink {
-  background: var(--ink);
-  color: var(--cream);
-}
-
-.btn--ink:hover {
-  transform: translateY(-2px);
-}
-
 .btn--soft {
   background: var(--cream-soft);
   border: 2px solid var(--card-border);

@@ -5,7 +5,6 @@
 export const studio = {
   name: 'Yellow Leaves Studio',
   url: 'https://yellowleavesstudio.com',
-  tagline: 'We make small things that last.',
   description:
     'Yellow Leaves Studio is a small independent studio making games and apps with care. Maker of Leave Smart, the location-based reminders app for iPhone, with an unannounced game in the works.',
   foundingYear: '2020',
@@ -21,10 +20,8 @@ export const studio = {
 
 export const leaveSmart = {
   name: 'Leave Smart',
-  subtitle: 'Smart location-based reminders',
   appStoreUrl: 'https://apps.apple.com/us/app/leave-smart/id6751127452',
   category: 'Productivity',
-  price: 'Free',
   requires: 'iPhone, iOS 15.1 or later',
   oneLiner: 'The right reminder, at the right place.',
   description:
@@ -47,12 +44,4 @@ export const leaveSmart = {
       body: 'Add time windows and repeats — daily, weekdays, or custom — so reminders only fire when they should.',
     },
   ],
-};
-
-export const game = {
-  // Unannounced — mood only. No name, no genre, no details on the site.
-  status: 'In development',
-  teaserLine: 'Our first game is napping.',
-  teaserSub:
-    'It’s taking root behind the scenes — follow along and we’ll share it the moment it wakes up.',
 };
